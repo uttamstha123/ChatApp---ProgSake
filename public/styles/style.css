@@ -1,0 +1,322 @@
+/**** variables ****/
+:root {
+
+  /* --primary-clr: #4bc015; */
+  --primary-clr: #2B9EB3;
+  --links-clr: #2b44b3;
+  --white-text-100: #fcfcfc;
+  --white-text-200: #f4f4f4;
+  --placeholder-text: #7c7d7c;
+  --input-text: #222222;
+  --error-msg: #bb0d4f;
+  --ff-primary: "poppins", sans-serif;
+}
+
+/**** base styles ****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--ff-primary);
+  width: 100%;
+  height: 100vh;
+}
+
+/* index page */
+.indexPage-container {
+  height: 85vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white-text-200);
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+#login,
+#signup {
+  color: var(--white-text-100);
+  font-size: 2.2rem;
+  align-self: center;
+}
+
+#login:hover,
+#signup:hover,
+.reset:hover {
+  transition: all 150ms ease;
+}
+
+#login:hover,
+#signup:hover,
+.reset:hover {
+  /* border-bottom: 1px solid var(--white-text-100); */
+  animation-name: Giggle;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-duration: 0.29s;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 1.75rem;
+  color: var(--placeholder-text);
+}
+
+/**** typo ****/
+h1 {
+  font-size: 4rem;
+  color: var(--white-text-100);
+}
+
+input {
+  font-size: 2.5rem;
+  padding: 0.8em 1.2em;
+  border-radius: 0.8rem;
+}
+
+a {
+  font-size: 1.5rem;
+}
+
+/**** mobile design ****/
+.grid-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.img-container {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  pointer-events: none;
+  width: 90%;
+}
+
+.img-container img {
+  z-index: 1;
+}
+
+.heading-text {
+  width: inherit;
+  grid-column: 1/12;
+  padding: 2rem 0 0 1.75rem;
+  background: var(--primary-clr);
+}
+
+.heading-text h1 {
+  z-index: 10;
+}
+
+.header {
+  height: 100%;
+  z-index: 3;
+}
+
+.heading-text h3 {
+  font-size: 2.5rem;
+  color: var(--white-text-100);
+}
+
+.form-container {
+  width: inherit;
+  height: 100%;
+  grid-column: 1/12;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-clr);
+  padding: 10rem 2rem 0 2rem;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.final-form-container {
+  padding: 3rem 2rem;
+}
+
+.final-form>*:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+select,
+option {
+  padding: 1rem;
+  font-size: 1.8rem;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  color: black;
+}
+
+.form-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+form input {
+  padding: 1rem 1.5rem;
+  color: var(--input-text);
+  z-index: 10;
+}
+
+form .reset {
+  font-size: 1.75rem;
+  align-self: flex-end;
+  z-index: 10;
+}
+
+#login {
+  margin-top: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  background: var(--white-text-100);
+  color: var(--input-text);
+  padding: 1rem 4rem;
+  border-radius: .4rem;
+  transition: all .25s;
+}
+
+#login:hover {
+  background: var(--input-text);
+  color: var(--white-text-100);
+}
+
+/* 
+.or {
+  margin: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.divider span {
+  font-size: 2.25rem;
+}
+
+.divider .line {
+  width: 10rem;
+  height: 0.2rem;
+  margin: 1rem 0;
+  background: var(--white-text-200);
+}
+
+.or .divider {
+  color: var(--white-text-200);
+} */
+
+/* Sign up page styling */
+.btn {
+  display: inline-block;
+  align-self: center;
+  font-size: 1.75rem;
+  background: var(--input-text);
+  color: var(--white-text-200);
+  padding: 0.75rem 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.sent-btn {
+  color: var(--primary-clr);
+}
+
+.final-btn {
+  padding: 1.5rem 2.5rem;
+}
+
+input:last-child {
+  text-align: center;
+}
+
+.password {
+  padding: 1rem 1.5rem;
+}
+
+.btn-p {
+  font-size: 1.8rem;
+  padding: 0.75rem 2.75rem;
+  margin: 4rem 0 2.5rem 0;
+}
+
+.registered-msg {
+  font-size: 2rem;
+  color: var(--error-msg);
+  margin-top: -4rem;
+  z-index: 10;
+}
+
+.already-registered {
+  font-size: 1.5rem;
+  color: var(--input-text);
+  margin: 1rem 0 1rem 1rem;
+}
+
+.already-registered a {
+  font-size: 1.5rem;
+  color: var(--links-clr);
+  text-decoration: underline;
+}
+
+/*  continue to redirect next page */
+.continue {
+  pointer-events: none;
+  cursor: pointer;
+}
+
+
+@keyframes Giggle {
+  0% {
+    transform: rotateZ(0deg) scale(1.05);
+  }
+
+  25% {
+    transform: rotateZ(5deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotateZ(0deg) scale(1.1);
+  }
+
+  75% {
+    transform: rotateZ(-5deg) scale(1.05);
+  }
+
+  100% {
+    transform: rotateZ(0deg) scale(1);
+  }
+}

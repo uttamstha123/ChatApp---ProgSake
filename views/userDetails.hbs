@@ -1,0 +1,44 @@
+<div class="grid-container">
+  <div class="heading-text header">
+    <h3
+      style="font-size: 2.8rem; margin-bottom: 1.2rem; text-decoration: underline"
+    >Let's Create your profile</h3>
+    <h3 style="width: 84%; font-size: 2.2rem">You will be given username and
+      display picture from our side...</h3>
+    <h3
+      style="font-size: 2.2rem; text-decoration: underline; margin-top: 1.2rem"
+    >Enter Your Information:</h3>
+  </div>
+  <div class="form-container final-form-container">
+    <form  method="post" class="final-form">
+      {{#if fail}}
+        <p style="color: rgb(199, 34, 34); font-size: 2rem">Both passwords
+          should match</p>
+      {{/if}}
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input
+        type="password"
+        name="password"
+        placeholder="Create Password"
+        required
+      />
+      <input
+        type="password"
+        name="confirm"
+        placeholder="Re-Enter Password"
+        required
+      />
+      <select name="gender" id="gender">
+        <option value="Gender" class="gen" disabled selected>Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Female">Prefer Not to Say</option>
+      </select>
+      {{#if invalidGen}}
+      <p class="registered-msg">Please select your gender</p>
+      {{/if}}
+      <input type="text" placeholder="Bio" name="bio" required />
+      <button type="submit" class="btn final-btn">Next</button>
+    </form>
+  </div>
+</div>

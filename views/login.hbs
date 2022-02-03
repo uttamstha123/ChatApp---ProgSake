@@ -1,0 +1,30 @@
+<div class="grid-container">
+    <section class="heading-text">
+        <h1>A new way to connect with your favourite people</h1>
+    </section>
+
+    <section class="form-container">
+        {{#if incorrectLogin}}
+        <p class="registered-msg">Invalid Email or password</p>
+        {{/if}}
+        {{#if notRegistered}}
+        <p class="registered-msg">Email not registered. Please Signup</p>
+        {{/if}}
+
+        <form method="post">
+            <input type="email" name="email" class="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" name="password" class="password" required>
+            {{#if incorrectLogin}}
+            {{!-- {{#if gotPassword.length}}
+            <a href="/login/forgetpassword" class="reset">Your Password: {{gotPassword}}</a>
+            {{else}} --}}
+            <a href="/login/forgetpassword" class="reset">Forgot Password</a>
+            {{!-- {{/if}} --}}
+            {{/if}}
+            <button type="submit" id="login">Login</button>
+        </form>
+
+        <p class='already-registered'>Haven't registered yet?&nbsp; <a href="./signup">SignUp</a></p>
+    </section>
+
+</div>

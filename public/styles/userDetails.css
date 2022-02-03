@@ -1,0 +1,152 @@
+.content-container {
+  height: 90vh;
+  background-color: #1e1e1e;
+  padding: 2rem 0;
+}
+.profile-container h1 {
+  font-size: inherit;
+}
+.profile-container {
+  width: 100%;
+  padding: 2rem 0 2rem 2rem;
+  display: flex;
+  /* align-items: center; */
+}
+
+.character {
+  border: 1px solid white;
+  height: 280px;
+  width: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 1.5rem;
+}
+
+.top-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* border: 1px solid white; */
+}
+
+.hide {
+  color: white;
+  display: none;
+}
+.namebio {
+  display: flex;
+  flex-direction: column;
+}
+.top-left .namebio {
+  font-size: 3em;
+}
+
+.card {
+  background-color: #f7f7f7;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.bio {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.bio h1 {
+  font-size: 2.2em;
+}
+
+.card > * {
+  color: #333;
+}
+.top-left .namebio h2 {
+  color: rgb(219, 204, 204);
+}
+
+.character img {
+  object-fit: cover;
+}
+.character h1 {
+  font-size: 1.5em;
+}
+
+.user {
+  color: rgb(238, 227, 227);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 4rem;
+}
+.user h3 {
+  font-size: 2.5em;
+}
+.user .char-name h1 {
+  font-size: 3em;
+}
+.user .about {
+  font-size: 2.2em;
+  color: #2e2e2e;
+  letter-spacing: 0.4px;
+}
+
+@media screen and (max-width: 900px) {
+  .profile-container > * {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .content-container {
+    height: auto;
+  }
+  .profile-container > * {
+    font-size: 8px;
+  }
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .namebio {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .profile-container > * {
+    font-size: 7px;
+  }
+  .character {
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+  }
+  .character img {
+    object-fit: scale-down;
+  }
+  .namebio {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+  .hide {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: white;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-container > * {
+    font-size: 6px;
+  }
+  .character img {
+    object-fit: cover;
+  }
+  .user h3 {
+    font-size: 4em;
+  }
+  .user .char-name h1 {
+    font-size: 4.2em;
+  }
+}
