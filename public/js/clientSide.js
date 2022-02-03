@@ -2,7 +2,7 @@ const nextPage = document.querySelector(".continue");
 const next = document.querySelector(".next");
 let signup = "";
 
-fetch("./serverResponse.env")
+fetch("./serverResponse.txt")
   .then((response) => response.text())
   .then((text) => {
     signup = text;
@@ -15,6 +15,9 @@ fetch("./serverResponse.env")
       next.innerText = "Wrong OTP";
       next.style = "background: red;";
       console.log("something went wrong");
+    } else {
+      next.innerText = "Verify OTP";
+      next.style = "background: var(--input-text); ";
     }
   });
 

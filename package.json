@@ -1,7 +1,7 @@
 {
   "name": "code",
   "version": "1.0.0",
-  "description": "",
+  "description": "A website for chatting",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js"

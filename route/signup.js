@@ -42,7 +42,7 @@ route.post("/", async (req, res) => {
         console.log("good");
         fs.writeFile(
           __dirname.substr(0, __dirname.indexOf("route")) +
-            "/public/serverResponse.env",
+            "/public/serverResponse.txt",
           "true",
           (err) => {
             if (err) console.log(err);
@@ -55,7 +55,7 @@ route.post("/", async (req, res) => {
         console.log("Not good");
         fs.writeFile(
           __dirname.substr(0, __dirname.indexOf("route")) +
-            "/public/serverResponse.env",
+            "/public/serverResponse.txt",
           "false",
           (err) => {
             if (err) console.log(err);
@@ -105,7 +105,7 @@ route.post("/", async (req, res) => {
   });
 });
 
-                                        // * User Details post handling
+// * User Details post handling
 
 const registerMail = (mail) => {
   const nodeMailer = require("nodemailer");
@@ -141,12 +141,10 @@ route.post("/userDetails", async (req, res) => {
     gender: req.body.gender,
     bio: req.body.bio,
   });
-  if(!userDetails.gender) {
-
-    return res.render('userDetails', {
+  if (!userDetails.gender) {
+    return res.render("userDetails", {
       invalidGen: true,
-    
-    })
+    });
   }
   if (password == confirm) {
     await userDetails.save((err, result) => {
@@ -156,6 +154,17 @@ route.post("/userDetails", async (req, res) => {
           page: "Create Profile",
         });
       } else {
+        fs.writeFile(
+          __dirname.substr(0, __dirname.indexOf("route")) +
+            "/public/serverResponse.txt",
+          "",
+          (err) => {
+            if (err) console.log(err);
+            else {
+              console.log("File written successfully\n");
+            }
+          }
+        );
         registerMail(mail);
         res.status(200).redirect("../login");
       }

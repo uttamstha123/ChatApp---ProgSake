@@ -46,7 +46,7 @@ mongo.connect(process.env.DB_URI, { useNewUrlParser: true }).then(() => {
   });
 });
 
-fs.writeFile(__dirname + "/public/serverResponse.env", "", (err) => {
+fs.writeFile(__dirname + "/public/serverResponse.txt", "", (err) => {
   if (err) console.log(err);
   else {
     console.log("File written successfully\n");
