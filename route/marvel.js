@@ -155,6 +155,6 @@ app.get("/forgetpassword", async (req, res) => {
   const userDetails = await UserDetails.find({ email: getEmail });
   const password = userDetails[0].password1;
   forgotPass(getEmail, password);
-  res.status(200).redirect("../login");
+  res.status(200).render("login");
 });
 module.exports = app;

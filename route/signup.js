@@ -113,13 +113,13 @@ const registerMail = (mail) => {
   const transporter = nodeMailer.createTransport({
     service: "gmail",
     auth: {
-      user: "progsake@gmail.com",
-      pass: "ChatApp@progsake",
+      user: process.env.GMAIL_ID,
+      pass: process.env.PASSWORD,
     },
   });
 
   const composeMail = {
-    from: "progsake@gmail.com",
+    from: process.env.GMAIL_ID,
     to: mail,
     subject: "Successfully Registered",
     text: "Thanks for registering in ProgSake.\n\nOur purpose is not to provide you best service but to check our following skills :\n\nNodeJs\nExpress\nMongoDB\nHTML template engines (handlebars)\nHTML\nCSS\nJavascript\n-------------------\nDependencies included :\nexpress\nexpress-handlebars\nmongoose\nnodemailer\nnodemon\ndotenv\nbody-parser\ntwo-step-auth\njoi\n\nSeriously, we do not care about your feedback.",
